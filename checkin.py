@@ -59,7 +59,7 @@ if object['code']!=200 and object['code']!=-2:
     print("签到时发生错误："+object['msg'])
 else:
     if object['code']==200:
-        print("签到成功，经验+"+object['point'])
+        print("签到成功，经验+"+str(object['point']))
     else:
         print("重复签到")
 
