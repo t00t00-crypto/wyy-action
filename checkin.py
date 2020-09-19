@@ -55,13 +55,24 @@ else:
 
 res=s.post(url=url2,data=protect('{"type":0}'),headers=headers)
 object=json.loads(res.text)
+print("移动端签到开始")
 if object['code']!=200 and object['code']!=-2:
     print("签到时发生错误："+object['msg'])
 else:
     if object['code']==200:
-        print("签到成功，经验+"+str(object['point']))
-    else:
-        print("重复签到")
+        print("签到成功，经验+"+str(object['point']))     
+        else:         
+            print("重复签到")  
+res=s.post(url=url2,data=protect('{"type":1}'),headers=headers)  
+object=json.loads(res.text)  
+print("电脑端签到开始")
+if object['code']!=200 and object['code']!=-2:        
+    print("签到时发生错误："+object['msg'])   
+else:        
+    if object['code']==200:            
+        print("签到成功，经验+"+str(object['point']))        
+        else:            
+            print("重复签到")    
 
 
 res=s.post(url=url3,data=protect('{"csrf_token":"'+requests.utils.dict_from_cookiejar(tempcookie)['__csrf']+'"}'),headers=headers)
