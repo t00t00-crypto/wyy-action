@@ -12,7 +12,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: develop
     if: github.event.repository.owner.id == github.event.sender.id
 
     steps:
