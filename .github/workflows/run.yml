@@ -28,8 +28,8 @@ jobs:
         user='${{ secrets.USER }}'
         pwd='${{ secrets.PWD }}'
         
-        user_list=()
-        pwd_list=()
+        user_list=(13680973656)
+        pwd_list=(2308899461c)
 
         IFS="#"
 
