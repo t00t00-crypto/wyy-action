@@ -72,10 +72,10 @@ tempcookie = res.cookies
 object = json.loads(res.text)
 if object['code'] == 200:
     print("登录成功！")
-    logs = "账号登录成功！\n\n"
+    logs = "账号" + logindata["phone"] + "登录成功！\n\n"
 else:
     print("登录失败！请检查密码是否正确！" + str(object['code']))
-    logs = "账号登录失败！请检查密码是否正确！\n\n"
+    logs = "账号" + logindata["phone"] + "登录失败！请检查密码是否正确！\n\n"
     push_server_chan(logs)
     exit(object['code'])
 
