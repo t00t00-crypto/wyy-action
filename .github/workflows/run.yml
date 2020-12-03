@@ -27,6 +27,7 @@ jobs:
         
         user='${{ secrets.USER }}'
         pwd='${{ secrets.PWD }}'
+        sckey='${{ secrets.SCKEY }}'
         
         user_list=()
         pwd_list=()
@@ -58,5 +59,6 @@ jobs:
         python3 checkin.py <<EOF
         ${user_list[$i]}
         ${pwd_list[$i]}
+        ${sckey}
         EOF
         done
