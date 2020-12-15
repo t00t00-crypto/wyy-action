@@ -106,3 +106,5 @@ if object['code']==200:
 else:
     print("发生错误："+str(object['code'])+object['message'])
     exit(object['code'])
+
+    
