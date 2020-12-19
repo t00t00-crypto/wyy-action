@@ -84,7 +84,7 @@ def do_checkin(user, pwd, logs):
     else:
         if object['code'] == 200:
             print("签到成功，经验+" + str(object['point']))
-            logs += "签到成功，经验+" + str(object['point'] + "\n\n")
+            logs += "签到成功，经验+" + str(object['point']) + "\n\n"
         else:
             print("重复签到")
             logs += "重复签到\n\n"
