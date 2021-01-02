@@ -26,5 +26,7 @@ jobs:
         USER:  ${{ secrets.USER }}
         PWD: ${{ secrets.PWD }}
         SCK: ${{ secrets.SCK }}
-      run: python3 checkin.py
+      run: |
+        pip install -r requirements.txt
+        python3 checkin.py
 
