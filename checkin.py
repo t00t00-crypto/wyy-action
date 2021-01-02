@@ -226,5 +226,5 @@ if __name__ == "__main__":
     PWD = os.environ.get("WYY_PWD")
     SCK = os.environ.get("SERVER_SCK")
 
-    AL = AutoLogin(USER, PWD, SCK)
+    AL = AutoLogin(username=USER, password=PWD, SCK=SCK)
     AL.index()
