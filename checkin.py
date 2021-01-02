@@ -2,6 +2,7 @@ import requests
 import base64
 import json
 import sys
+import os
 import hashlib
 from Crypto.Cipher import AES
 import logging
@@ -221,25 +222,9 @@ class AutoLogin:
 
 
 if __name__ == "__main__":
-    if len(sys.argv) == 4:
-        username = sys.argv[1]
-        password = sys.argv[2]
-        SCK = sys.argv[3]
-        AL = AutoLogin(username, password, SCK)
-        AL.index()
-    elif len(sys.argv) == 3:
-        username = sys.argv[1]
-        password = sys.argv[2]
-        SCK = ""
-        AL = AutoLogin(username, password, SCK)
-        AL.index()
-    else:
-        AL = AutoLogin()
-        AL.log("""
-    错误： 参数传入错误！
-    使用方法: python checkin.py 手机号 密码 [server酱的SCK]
-    注： 手机号与密码可以为多个，请使用#隔开
-    例： python checkin.py 12344455#121321323 23123123#321312312 
-    注： server 酱可以将信息发送到微信，没有可以不填 
-        """,
-               status_code=2)
+    USER = os.environ.get("USER")
+    PWD = os.environ.get("PWD")
+    SCK = os.environ.get("SCK")
+
+    AL = AutoLogin(USER, PWD, SCK)
+    AL.index()
