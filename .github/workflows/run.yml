@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ master ]
   schedule:
-    - cron: 0 22,14 * * *
+    - cron: 0 0,12 * * * # At 00:00 and 12:00, every day
   watch:
     types: started
 
@@ -21,42 +21,16 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.7
-    - name: 签到
+    - if: ${{ secrets.SCK }} == ""
+      name: 签到不发送消息
       run: |
         pip install -r requirements.txt
         
-        user='${{ secrets.USER }}'
-        pwd='${{ secrets.PWD }}'
+        python3 checkin.py ${{ secrets.USER }} ${{ secrets.PWD }}
+
+    - if: ${{ secrets.SCK }} != ""
+      name: 签到并发送消息
+      run: |
+        pip install -r requirements.txt
         
-        user_list=()
-        pwd_list=()
-
-        IFS="#"
-
-        for u in ${user[*]}
-        do
-        user_list[${#user_list[*]}]=${u}
-        done
-
-        for p in ${pwd[*]}
-        do
-        pwd_list[${#pwd_list[*]}]=${p}
-        done
-
-        user_num=${#user_list[*]}
-        pwd_num=${#pwd_list[*]}
-
-        if [ $user_num != $pwd_num ];then
-        echo "账号和密码个数不对应"
-        exit 1
-        else
-        echo "共有 $user_num 个账号，即将开始签到"
-        fi
-
-        for ((i=0;i<$user_num;i++))
-        do
-        python3 checkin.py <<EOF
-        ${user_list[$i]}
-        ${pwd_list[$i]}
-        EOF
-        done
+        python3 checkin.py ${{ secrets.USER }} ${{ secrets.PWD }} ${{ secrets.SCK }}

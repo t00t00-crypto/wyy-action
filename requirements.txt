@@ -1,2 +1,9 @@
-pycryptodome
-requests
+certifi==2020.12.5
+chardet==4.0.0
+coloredlogs==15.0
+humanfriendly==9.1
+idna==2.10
+pycryptodome==3.9.9
+requests==2.25.1
+urllib3==1.26.2
+yapf==0.30.0
