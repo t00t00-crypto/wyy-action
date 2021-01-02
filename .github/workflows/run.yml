@@ -23,11 +23,12 @@ jobs:
         python-version: 3.7
     - name: 安装环境依赖
       run: pip install -r requirements.txt
-    - name: 获取密钥
+    - name: 读取帐号密码
       env:
         WYY_USER:  ${{ secrets.USER }}
         WYY_PWD: ${{ secrets.PWD }}
         SERVER_SCK: ${{ secrets.SCK }}
+      run: echo "获取帐号密码成功"
     - name: 开始签到刷歌 
       run: python3 checkin.py
 
