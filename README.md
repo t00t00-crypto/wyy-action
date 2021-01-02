@@ -11,6 +11,7 @@
     - [可选择设置Server酱通知](#可选择设置server酱通知)
   - [三、启用 Action](#三启用-action)
   - [四、查看运行结果](#四查看运行结果)
+  - [>](#)
   - [注意事项](#注意事项)
 
 ## 一、Fork 此仓库
@@ -47,18 +48,25 @@
 1. ### 点击 ***Actions***，再点击 **I understand my workflows, go ahead and enable them**
 
    ![](https://i0.hdslb.com/bfs/album/da43935eda722fabe97f66011bd8ae27f147cc07.png)
+2. ### 可能有的小伙伴需要继续点击下面的`enable workflow`来启用
+   
+   ![](https://i0.hdslb.com/bfs/album/684185f68d73c9b0e9ff4bfd8e7c687a75b77ae0.png)
 
-2. ### 点击右侧的 ***Star***
+3. ### 点击右侧的 ***Star***
 
    ![](https://i0.hdslb.com/bfs/album/f2d683b011284293fe2f56da22d205148392d764.png)
 
 ## 四、查看运行结果
 > Actions --> 签到 --> build
->
+> ![](https://i0.hdslb.com/bfs/album/2b6b6372092e4cf23ba45d0cc6d02fe51abf97c7.png)
 > 能看到如下图所示，表示成功
+>
+> ![](https://i0.hdslb.com/bfs/album/a9dc0f45f165bce0ab4b085e186738e554f9f9ee.png)
+>
+---
+ **如果显示的是红色的，请双击打开它，查看里面详细的错误信息，并在issues中提出来，写issues的时候请附带错误信息，或者错误信息截图**
 
-![image-20200727143009081](https://i.loli.net/2020/07/27/kvV31BJKYDp9MRm.png)
-
+---
 ## 注意事项
 
 1. ### 每天运行两次，在上午 8 点和晚上 20 点。
