@@ -21,14 +21,12 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.7
-    - name: 安装环境依赖
-      run: pip install -r requirements.txt
-    - name: 读取帐号密码并运行脚本
+    - name: 运行脚本
       env:
         WYY_USER:  ${{ secrets.USER }}
         WYY_PWD: ${{ secrets.PWD }}
         SERVER_SCK: ${{ secrets.SCK }}
       run: |
-        echo "获取帐号密码成功，开始签到刷歌 "
+        pip install -r requirements.txt
         python3 checkin.py
 
