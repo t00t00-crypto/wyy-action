@@ -23,9 +23,9 @@ jobs:
         python-version: 3.7
     - name: 签到
       env:
-        USER:  ${{ secrets.USER }}
-        PWD: ${{ secrets.PWD }}
-        SCK: ${{ secrets.SCK }}
+        WYY_USER:  ${{ secrets.USER }}
+        WYY_PWD: ${{ secrets.PWD }}
+        SERVER_SCK: ${{ secrets.SCK }}
       run: |
         pip install -r requirements.txt
         python3 checkin.py

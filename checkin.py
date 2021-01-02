@@ -222,9 +222,9 @@ class AutoLogin:
 
 
 if __name__ == "__main__":
-    USER = os.environ.get("USER")
-    PWD = os.environ.get("PWD")
-    SCK = os.environ.get("SCK")
+    USER = os.environ.get("WYY_USER")
+    PWD = os.environ.get("WYY_PWD")
+    SCK = os.environ.get("SERVER_SCK")
 
     AL = AutoLogin(USER, PWD, SCK)
     AL.index()
